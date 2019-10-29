@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import Header from './component/header';
 import Headline from './component/headline';
 import './index.scss';
+import { Provider } from 'react-redux';
+import { store } from './createStore';
 
 const tempArr = [
   {
@@ -30,4 +32,9 @@ function App() {
 }
 
 const rootElement = document.getElementById('root');
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  rootElement
+);
