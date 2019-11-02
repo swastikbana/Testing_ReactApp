@@ -27,4 +27,17 @@ describe('App component testing', () => {
     const component = findByTestAttribute(wrapper, 'appComponent');
     expect(component.length).toBe(1);
   });
+
+  it('exampleMethod_updateState should update state as expected', () => {
+    const classInstance = wrapper.instance();
+    classInstance.exampleMethod_updateState();
+    const newState = classInstance.state.hidebtn;
+    expect(newState).toBe(true);
+  });
+
+  it('exampleMethod_returnsValue should return value as expcted', () => {
+    const classInstance = wrapper.instance();
+    const newValue = classInstance.exampleMethod_returnsValue(6);
+    expect(newValue).toBe(7);
+  });
 });
